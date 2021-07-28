@@ -2,8 +2,7 @@ package co.com.utestRetoTecnico.stepdefinitions;
 
 import co.com.utestRetoTecnico.model.UserData;
 import co.com.utestRetoTecnico.questions.AnswerSuccessfullySignUp;
-import co.com.utestRetoTecnico.tasks.OpenUp;
-import co.com.utestRetoTecnico.tasks.Register;
+import co.com.utestRetoTecnico.tasks.*;
 import cucumber.api.DataTable;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
@@ -14,7 +13,7 @@ import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-
+import static co.com.utestRetoTecnico.util.Constants.ZERO;
 import java.util.List;
 
 public class UtestRetoTecnicoStepDefinitions {
@@ -34,8 +33,11 @@ public class UtestRetoTecnicoStepDefinitions {
 
     @When("^brandon clicks on button Join today and writes his credentials$")
     public void brandonClicksOnButtonJoinTodayAndWritesHisCredentials(List<UserData> userData) {
-        OnStage.theActorCalled("brandon").attemptsTo(
-                Register.introduceData(userData)
+        OnStage.theActorInTheSpotlight().attemptsTo(
+                FillOut.personalData(userData.get(ZERO)),
+                FindUser.addressInformation(userData.get(ZERO)),
+                FindThe.devicesInformation(userData.get(ZERO)),
+                Choose.passwordAndConditions(userData.get(ZERO))
         );
     }
 

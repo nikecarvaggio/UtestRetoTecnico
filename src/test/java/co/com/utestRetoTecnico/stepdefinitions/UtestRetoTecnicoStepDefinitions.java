@@ -3,14 +3,11 @@ package co.com.utestRetoTecnico.stepdefinitions;
 import co.com.utestRetoTecnico.model.UserData;
 import co.com.utestRetoTecnico.questions.AnswerSuccessfullySignUp;
 import co.com.utestRetoTecnico.tasks.*;
-import cucumber.api.DataTable;
 import cucumber.api.java.Before;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.serenitybdd.screenplay.GivenWhenThen;
-import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import static co.com.utestRetoTecnico.util.Constants.ZERO;
@@ -35,7 +32,7 @@ public class UtestRetoTecnicoStepDefinitions {
     public void brandonClicksOnButtonJoinTodayAndWritesHisCredentials(List<UserData> userData) {
         OnStage.theActorInTheSpotlight().attemptsTo(
                 FillOut.personalData(userData.get(ZERO)),
-                FindUser.addressInformation(userData.get(ZERO)),
+                Find.addressInformation(userData.get(ZERO)),
                 FindThe.devicesInformation(userData.get(ZERO)),
                 Choose.passwordAndConditions(userData.get(ZERO))
         );

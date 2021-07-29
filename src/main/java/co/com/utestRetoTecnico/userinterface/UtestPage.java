@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 
 @DefaultUrl("https://utest.com")
 public class UtestPage extends PageObject {
+
     public static final Target SINGUP_BUTTON =
             Target.the("Boton signup").located(By.xpath("/html/body/ui-view/unauthenticated-container/div/div/unauthenticated-header/div/div[3]/ul[2]/li[2]"));
 
@@ -114,8 +115,6 @@ public class UtestPage extends PageObject {
     public static final Target BUTTON_COMPLETE_SETUP=Target.the("locate button finish signup process").
             located(By.xpath("//div[@class='pull-right next-step']//a[@aria-label='Complete Setup']"));
 
-    public static final Target EMAIL_EXISTS=Target.the("locate span to validate email warningEmail already registered error").
-            located(By.xpath("//span[@id='emailError']") );
 }
 
 

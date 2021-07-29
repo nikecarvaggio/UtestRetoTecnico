@@ -14,16 +14,16 @@ import org.openqa.selenium.Keys;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class FindUser implements Task {
+public class Find implements Task {
 
     private UserData userData;
 
-    public FindUser(UserData userData) {
+    public Find(UserData userData) {
         this.userData = userData;
     }
 
     public static Performable addressInformation(UserData userData) {
-        return Tasks.instrumented(FindUser.class, userData);
+        return Tasks.instrumented(Find.class, userData);
     }
 
     @Override

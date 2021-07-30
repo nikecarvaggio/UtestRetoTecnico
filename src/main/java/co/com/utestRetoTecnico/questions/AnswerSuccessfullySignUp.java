@@ -1,6 +1,6 @@
 package co.com.utestRetoTecnico.questions;
 
-import co.com.utestRetoTecnico.userinterface.UtestPage;
+import co.com.utestRetoTecnico.userinterface.StepFourSecurity;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
@@ -21,7 +21,7 @@ public class AnswerSuccessfullySignUp implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
 
-        String strSuccessfullSignUp= Text.of(UtestPage.SUCCESSFULLY_SIGNUP).viewedBy(actor).asString();
+        String strSuccessfullSignUp= Text.of(StepFourSecurity.SUCCESSFULLY_SIGNUP).viewedBy(actor).asString();
 
 
         return (strQuestion.equals(strSuccessfullSignUp)) ? true : false;

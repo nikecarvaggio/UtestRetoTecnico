@@ -1,7 +1,6 @@
 package co.com.utestRetoTecnico.tasks;
 
 import co.com.utestRetoTecnico.model.UserData;
-import co.com.utestRetoTecnico.userinterface.UtestPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -11,6 +10,8 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Hit;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import org.openqa.selenium.Keys;
+
+import static co.com.utestRetoTecnico.userinterface.StepOnePersonal.*;
 
 public class FillOut implements Task {
 
@@ -27,16 +28,16 @@ public class FillOut implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Enter.theValue(userData.getStrFistName()).into(UtestPage.INPUT_FIRSTNAME),
-                Enter.theValue(userData.getStrLastName()).into(UtestPage.INPUT_LASTNAME),
-                Enter.theValue(userData.getStrEmail()).into(UtestPage.INPUT_EMAIL),
-                SelectFromOptions.byVisibleText(userData.getStrMonth()).from(UtestPage.INPUT_MONTH),
-                SelectFromOptions.byVisibleText(userData.getStrDay()).from(UtestPage.INPUT_DAY),
-                SelectFromOptions.byVisibleText(userData.getStrYear()).from(UtestPage.INPUT_YEAR),
-                Enter.theValue(userData.getStrLanguageUser()).into(UtestPage.INPUT_LANGUAGE),
-                Hit.the(Keys.DOWN).keyIn(UtestPage.INPUT_LANGUAGE),
-                Hit.the(Keys.ENTER).keyIn(UtestPage.INPUT_LANGUAGE),
-                Click.on(UtestPage.BUTTON_NEXT_LOCATION)
+                Enter.theValue(userData.getStrFistName()).into(INPUT_FIRSTNAME),
+                Enter.theValue(userData.getStrLastName()).into(INPUT_LASTNAME),
+                Enter.theValue(userData.getStrEmail()).into(INPUT_EMAIL),
+                SelectFromOptions.byVisibleText(userData.getStrMonth()).from(INPUT_MONTH),
+                SelectFromOptions.byVisibleText(userData.getStrDay()).from(INPUT_DAY),
+                SelectFromOptions.byVisibleText(userData.getStrYear()).from(INPUT_YEAR),
+                Enter.theValue(userData.getStrLanguageUser()).into(INPUT_LANGUAGE),
+                Hit.the(Keys.DOWN).keyIn(INPUT_LANGUAGE),
+                Hit.the(Keys.ENTER).keyIn(INPUT_LANGUAGE),
+                Click.on(BUTTON_NEXT_LOCATION)
         );
     }
 }

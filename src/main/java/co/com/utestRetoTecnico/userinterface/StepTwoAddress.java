@@ -4,7 +4,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 
-public class StepTwoAddressData extends PageObject {
+public class StepTwoAddress extends PageObject {
     public static final Target LABEL_AUTODETECTED=Target.the("autodetect field").
             located(By.xpath("//*[@id=\"regs_container\"]/div/div[2]/div/div[2]/div/form/div[1]/div[3]/div[1]/div[1]/span[2]"));
 

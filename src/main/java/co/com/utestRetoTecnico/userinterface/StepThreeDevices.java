@@ -4,7 +4,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 
-public class StepThreeDevicesData extends PageObject {
+public class StepThreeDevices extends PageObject {
 
     public static final Target BUTTON_COMPUTER=Target.the("locate field to write computer s.o").
             located(By.xpath("//div[@class='ui-select-match' and @placeholder='Select OS']"));

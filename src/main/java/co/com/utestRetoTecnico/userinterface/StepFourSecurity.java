@@ -4,7 +4,7 @@ import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 
-public class StepFourSecurityData extends PageObject {
+public class StepFourSecurity extends PageObject {
 
     public static final Target SUCCESSFULLY_SIGNUP=Target.the("confirm complete setpup").
             located(By.xpath("//*[@id=\"laddaBtn\"]/span[1]"));

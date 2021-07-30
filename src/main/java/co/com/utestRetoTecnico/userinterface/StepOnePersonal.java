@@ -6,7 +6,7 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 
 @DefaultUrl("https://utest.com")
-public class StepOnePersonalData extends PageObject {
+public class StepOnePersonal extends PageObject {
 
     public static final Target BUTTON_NEXT_LOCATION=Target.the("locate button to next stepTwo Location").
             located(By.xpath("//div[@class='form-group col-xs-12 text-right']//span[contains(text(),'Next: Location')]"));

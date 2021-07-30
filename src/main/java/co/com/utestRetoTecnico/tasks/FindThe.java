@@ -1,7 +1,6 @@
 package co.com.utestRetoTecnico.tasks;
 
 import co.com.utestRetoTecnico.model.UserData;
-import co.com.utestRetoTecnico.userinterface.UtestPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -11,12 +10,14 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Hit;
 import org.openqa.selenium.Keys;
 
+import static co.com.utestRetoTecnico.userinterface.StepThreeDevices.*;
+
 public class FindThe implements Task {
 
-    private UserData userData;
+    private UserData deviceData;
 
-    public FindThe(UserData userData) {
-        this.userData = userData;
+    public FindThe(UserData deviceData) {
+        this.deviceData = deviceData;
     }
 
     public static Performable devicesInformation(UserData userData) {
@@ -26,31 +27,31 @@ public class FindThe implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Click.on(UtestPage.BUTTON_COMPUTER),
-                Enter.theValue(userData.getStrComputer()).into(UtestPage.INPUT_COMPUTER),
-                Hit.the(Keys.DOWN).keyIn(UtestPage.INPUT_COMPUTER),
-                Hit.the(Keys.ENTER).keyIn(UtestPage.INPUT_COMPUTER),
-                Click.on(UtestPage.BUTTON_VERSION),
-                Enter.theValue(userData.getStrVersion()).into(UtestPage.INPUT_VERSION),
-                Hit.the(Keys.DOWN).keyIn(UtestPage.INPUT_VERSION),
-                Hit.the(Keys.ENTER).keyIn(UtestPage.INPUT_VERSION),
-                Click.on(UtestPage.BUTTON_LANGUAGE_PC),
-                Enter.theValue(userData.getStrLanguagePc()).into(UtestPage.INPUT_LANGUAGE_PC),
-                Hit.the(Keys.DOWN).keyIn(UtestPage.INPUT_LANGUAGE_PC),
-                Hit.the(Keys.ENTER).keyIn(UtestPage.INPUT_LANGUAGE_PC),
-                Click.on(UtestPage.BUTTON_MOBILE_DEVICE),
-                Enter.theValue(userData.getStrMobileDevice()).into(UtestPage.INPUT_MOBILE_DEVICE),
-                Hit.the(Keys.DOWN).keyIn(UtestPage.INPUT_MOBILE_DEVICE),
-                Hit.the(Keys.ENTER).keyIn(UtestPage.INPUT_MOBILE_DEVICE),
-                Click.on(UtestPage.BUTTON_MODEL),
-                Enter.theValue(userData.getStrModel()).into(UtestPage.INPUT_MODEL),
-                Hit.the(Keys.DOWN).keyIn(UtestPage.INPUT_MODEL),
-                Hit.the(Keys.ENTER).keyIn(UtestPage.INPUT_MODEL),
-                Click.on(UtestPage.BUTTON_OS),
-                Enter.theValue(userData.getStrOS()).into(UtestPage.INPUT_OS),
-                Hit.the(Keys.DOWN).keyIn(UtestPage.INPUT_OS),
-                Hit.the(Keys.ENTER).keyIn(UtestPage.INPUT_OS),
-                Click.on(UtestPage.BUTTON_LAST_STEP)
+                Click.on(BUTTON_COMPUTER),
+                Enter.theValue(deviceData.getStrComputer()).into(INPUT_COMPUTER),
+                Hit.the(Keys.DOWN).keyIn(INPUT_COMPUTER),
+                Hit.the(Keys.ENTER).keyIn(INPUT_COMPUTER),
+                Click.on(BUTTON_VERSION),
+                Enter.theValue(deviceData.getStrVersion()).into(INPUT_VERSION),
+                Hit.the(Keys.DOWN).keyIn(INPUT_VERSION),
+                Hit.the(Keys.ENTER).keyIn(INPUT_VERSION),
+                Click.on(BUTTON_LANGUAGE_PC),
+                Enter.theValue(deviceData.getStrLanguagePc()).into(INPUT_LANGUAGE_PC),
+                Hit.the(Keys.DOWN).keyIn(INPUT_LANGUAGE_PC),
+                Hit.the(Keys.ENTER).keyIn(INPUT_LANGUAGE_PC),
+                Click.on(BUTTON_MOBILE_DEVICE),
+                Enter.theValue(deviceData.getStrMobileDevice()).into(INPUT_MOBILE_DEVICE),
+                Hit.the(Keys.DOWN).keyIn(INPUT_MOBILE_DEVICE),
+                Hit.the(Keys.ENTER).keyIn(INPUT_MOBILE_DEVICE),
+                Click.on(BUTTON_MODEL),
+                Enter.theValue(deviceData.getStrModel()).into(INPUT_MODEL),
+                Hit.the(Keys.DOWN).keyIn(INPUT_MODEL),
+                Hit.the(Keys.ENTER).keyIn(INPUT_MODEL),
+                Click.on(BUTTON_OS),
+                Enter.theValue(deviceData.getStrOS()).into(INPUT_OS),
+                Hit.the(Keys.DOWN).keyIn(INPUT_OS),
+                Hit.the(Keys.ENTER).keyIn(INPUT_OS),
+                Click.on(BUTTON_LAST_STEP)
         );
     }
 }
